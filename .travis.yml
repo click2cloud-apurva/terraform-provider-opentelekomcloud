@@ -13,7 +13,7 @@ install:
 # See: https://github.com/golang/go/issues/12933
 
 - bash scripts/gogetcookie.sh
-- apt-get install yum
+- sudo apt-get install yum
 - yum update -y
 - yum install -y zip unzip
 
