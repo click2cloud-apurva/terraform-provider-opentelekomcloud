@@ -10,7 +10,7 @@ install:
 # This script is used by the Travis build to install terraform packages
 - sudo apt-get install -y zip unzip
 - wget https://releases.hashicorp.com/terraform/0.9.8/terraform_0.9.8_linux_amd64.zip
-- unzip terraform_0.9.8_linux_amd64.zip
+- unzip terraform_0.11.7_linux_amd64.zip
 - sudo mv terraform /usr/local/bin/
 - terraform --version
 
@@ -22,8 +22,8 @@ before_script:
 script:
 
 - terraform init
-# - terraform apply -auto-approve
-# - terraform destroy -force
+- terraform apply -auto-approve
+- terraform destroy -force
 
 
 
