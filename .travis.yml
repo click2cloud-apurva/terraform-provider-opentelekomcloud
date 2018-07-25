@@ -7,26 +7,23 @@ go:
 - 1.8.1
 
 install:
-# This script is used by the Travis build to install a cookie for
-# go.googlesource.com so rate limits are higher when using `go get` to fetch
-# packages that live there.
-# See: https://github.com/golang/go/issues/12933
-
+# This script is used by the Travis build to install terraform packages
 - sudo apt-get install -y zip unzip
 - wget https://releases.hashicorp.com/terraform/0.9.8/terraform_0.9.8_linux_amd64.zip
 - unzip terraform_0.9.8_linux_amd64.zip
 - sudo mv terraform /usr/local/bin/
 - terraform --version
 
+before_script:
+# creates executable file
+- go build
 
 
 script:
 
-- go build
 - terraform init
-- terraform apply -auto-approve
-- terraform destroy -force
-
+# - terraform apply -auto-approve
+# - terraform destroy -force
 
 
 
