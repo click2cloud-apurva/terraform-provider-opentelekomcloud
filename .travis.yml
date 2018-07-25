@@ -22,8 +22,8 @@ install:
 
 script:
 - terraform init
-- terraform apply -auto-approve
-- terraform destroy -force
+- terraform apply
+- terraform destroy
 
 
 
