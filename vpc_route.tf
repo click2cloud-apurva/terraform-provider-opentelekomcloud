@@ -10,11 +10,11 @@ provider "opentelekomcloud" {
 
 
 resource "opentelekomcloud_vpc_v1" "vpc_1" {
-  name = "vpc_test"
+  name = "vpc_test-roh"
   cidr = "192.168.0.0/16"
 }
 resource "opentelekomcloud_vpc_v1" "vpc_2" {
-  name = "vpc_test1"
+  name = "vpc_test1-roh"
   cidr = "192.168.0.0/16"
 }
 resource "opentelekomcloud_vpc_peering_connection_v2" "peering_1" {

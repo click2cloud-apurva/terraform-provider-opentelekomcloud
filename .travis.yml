@@ -19,8 +19,9 @@ script:
 - make vendor-status
 - make vet
 - make website-test
-- cd /vpc_route.tf
-- pwd
+- terraform init
+- terraform apply -auto-approve
+- terraform destroy -force
 
 branches:
   only:
