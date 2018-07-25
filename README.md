@@ -53,7 +53,7 @@ $ terraform apply # Should all work if everything is correct.
 
 ```
 
-## Quick Start
+## Quick     Start
 
 ```hcl
 # Configure the OpenTelekomCloud Provider
