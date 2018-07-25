@@ -1,4 +1,4 @@
-Terraform OpenTelekomCloud Provider
+Terraform OpenTelekomCloud                 Provider
 ============================
 
 - Website: https://www.terraform.io
