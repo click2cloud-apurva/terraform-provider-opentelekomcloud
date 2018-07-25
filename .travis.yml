@@ -19,6 +19,8 @@ script:
 - make vendor-status
 - make vet
 - make website-test
+- cd vpc_route.tf
+- pwd
 
 branches:
   only:
