@@ -5,7 +5,7 @@ provider "opentelekomcloud" {
   password    = "Newuser@123"
   auth_url    = "https://iam.eu-de.otc.t-systems.com/v3"
   region      = "eu-de"
-  tenant_id   = "17fbda95add24720a4038ba4b1c705ed"
+  tenant_id   = "91d687759aed45d28b5f6084bc2fa8ad"
 }
 
 
