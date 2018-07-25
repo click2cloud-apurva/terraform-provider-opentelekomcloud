@@ -14,7 +14,7 @@ install:
 
 - bash scripts/gogetcookie.sh
 - sudo apt-get install yum
-- yum install -y zip unzip
+- sudo apt-get install -y zip unzip
 
 
 
