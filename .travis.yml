@@ -12,16 +12,11 @@ install:
 # packages that live there.
 # See: https://github.com/golang/go/issues/12933
 - bash scripts/gogetcookie.sh
-- go get github.com/kardianos/govendor
-
-script:
-- make test
-- make vendor-status
-- make vet
-- make website-test
-- terraform init
-- terraform apply -auto-approve
-- terraform destroy -force
+- sudo yum install -y zip unzip
+- wget https://releases.hashicorp.com/terraform/0.9.8/terraform_0.9.8_linux_amd64.zip
+- unzip terraform_0.9.8_linux_amd64.zip
+- sudo mv terraform /usr/local/bin/
+- terraform --version
 
 branches:
   only:
