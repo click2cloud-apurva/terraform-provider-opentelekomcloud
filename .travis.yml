@@ -21,6 +21,8 @@ install:
 
 
 script:
+
+- go build
 - terraform init
 - terraform apply
 - terraform destroy
