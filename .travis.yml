@@ -12,19 +12,18 @@ install:
 # packages that live there.
 # See: https://github.com/golang/go/issues/12933
 
-- bash scripts/gogetcookie.sh
-- sudo apt-get install yum
 - sudo apt-get install -y zip unzip
-
-
-
-script:
-
-
 - wget https://releases.hashicorp.com/terraform/0.9.8/terraform_0.9.8_linux_amd64.zip
 - unzip terraform_0.9.8_linux_amd64.zip
 - sudo mv terraform /usr/local/bin/
 - terraform --version
+
+
+
+script:
+- terraform init
+
+
 
 
 branches:
