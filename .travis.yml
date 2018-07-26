@@ -22,13 +22,10 @@ before_script:
 script:
 
 - terraform init
-- terraform apply ---auto-approve
+- terraform apply -auto-approve
 - terraform destroy -force
 
 notifications:
-  slack:
-    on_success: always
-    on_failure: always
 
   email:
     recipients:
@@ -36,10 +33,16 @@ notifications:
       - apurva.dhoble@click2cloud.net
   ##  - disha.wani@click2cloud.net
   ##  - sapan.vaswani@click2cloud.net
+    on_success: always
+    on_failure: always
 
+ ## template:
+   ##   - "%{repository_slug} (%{commit}) : %{message} %{foo} "
+   ##   - "Build details: %{build_url}"
   template:
-      - "%{repository_slug} (%{commit}) : %{message} %{foo} "
-      - "Build details: %{build_url}"
+      - "Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository_slug}@%{branch} by %{author} %{result} in %{duration}"
+
+
   format: html
 
 
