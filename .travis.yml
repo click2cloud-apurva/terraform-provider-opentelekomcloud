@@ -2,10 +2,14 @@
 # sudo: required
 #services:
 # - docker
+#Specifies language
 language: go
+# language version
 go:
 - 1.8.1
 
+
+# To install dependencies to install terraform
 install:
 # This script is used by the Travis build to install terraform packages
 - sudo apt-get install -y zip unzip
@@ -14,14 +18,17 @@ install:
 - sudo mv terraform /usr/local/bin/
 - terraform --version
 
+
 before_script:
 # creates executable file
 - go build
 
 
+# script to execute terraform command to create a resource
 script:
 
 - terraform init
+- terraform plan
 - terraform apply -auto-approve
 - terraform destroy -force
 
