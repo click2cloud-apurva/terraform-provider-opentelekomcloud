@@ -22,16 +22,14 @@ before_script:
 script:
 
 - terraform init
-- terraform apply -auto-approve
+- terraform apply ---auto-approve
 - terraform destroy -force
-
 
 notifications:
   slack:
     on_success: always
     on_failure: always
 
- # email: false
   email:
     recipients:
       - rohini.burde@click2cloud.net
