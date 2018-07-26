@@ -22,12 +22,12 @@ before_script:
 script:
 
 - terraform init /VPC_resource_testcase1/vpc_route.tf
-- terraform apply -auto-approve /VPC_resource_testcase1/vpc_route.tf
-- terraform destroy -force /VPC_resource_testcase1/vpc_route.tf
+- terraform apply -auto-approve /VPC_resource_testcase1
+- terraform destroy -force /VPC_resource_testcase1
 
 - terraform init /VPC_resource_testcase1/vpc_route_withInvalidParameters.tf
-- terraform apply -auto-approve /VPC_resource_testcase1/vpc_route_withInvalidParameters.tf
-- terraform destroy -force /VPC_resource_testcase1/vpc_route_withInvalidParameters.tf
+- terraform apply -auto-approve /VPC_resource_testcase1
+- terraform destroy -force /VPC_resource_testcase1
 
 
 
