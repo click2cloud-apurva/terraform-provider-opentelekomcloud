@@ -1,15 +1,20 @@
-# dist: trusty
-# sudo: required
-#services:
-# - docker
-#Specifies language
+#Ubuntu VM created by Google compute
+## https://docs.travis-ci.com/user/reference/overview/
+dist: trusty
+
+# If you need a more customizable environment running in a virtual machine :ubuntu environment
+sudo: required #enabled
+
+services:
+ - docker
+
+ #Specifies language
 language: go
+
 # language version
 go:
 - 1.8.1
 
-
-# To install dependencies to install terraform
 install:
 # This script is used by the Travis build to install terraform packages
 - sudo apt-get install -y zip unzip
@@ -26,7 +31,6 @@ before_script:
 
 # script to execute terraform command to create a resource
 script:
-
 - terraform init
 - terraform plan
 - terraform apply -auto-approve
