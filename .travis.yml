@@ -26,6 +26,23 @@ script:
 - terraform destroy -force
 
 
+notifications:
+  slack:
+    on_success: always
+    on_failure: always
+
+ # email: false
+  email:
+    recipients:
+      - rohini.burde@click2cloud.net
+      - apurva.dhoble@click2cloud.net
+  ##  - disha.wani@click2cloud.net
+  ##  - sapan.vaswani@click2cloud.net
+
+  template:
+      - "%{repository_slug} (%{commit}) : %{message} %{foo} "
+      - "Build details: %{build_url}"
+  format: html
 
 
 
