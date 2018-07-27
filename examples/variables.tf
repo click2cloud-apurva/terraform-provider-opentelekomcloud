@@ -1,25 +1,29 @@
 ### OpenTelekomCloud Credentials
 variable "username" {
   # If you don't fill this in, you will be prompted for it
-  #default = "your_username"
+  default = "c2c-5"
 }
 
 variable "password" {
   # If you don't fill this in, you will be prompted for it
-  #default = "your_password'
+  default = "Newuser@123"
 }
 
 variable "domain_name" {
   # If you don't fill this in, you will be prompted for it
-  #default = "your_domainname"
+  default = "OTC00000000001000010501"
 }
 
-variable "tenant_name" {
-  default = "eu-de"
+/*variable "tenant_name" {
+  default = "eu-de_ansible"
+}*/
+
+variable "tenant_id" {
+  default = "91d687759aed45d28b5f6084bc2fa8ad"
 }
 
 variable "endpoint" {
-  default = "https://iam.eu-de.otc.t-systems.com:443/v3"
+  default = "https://iam.eu-de.otc.t-systems.com/v3"
 }
 
 ### OTC Specific Settings
