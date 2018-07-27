@@ -33,13 +33,13 @@ before_script:
 
 jobs:
   include:
-    - stage: testcase1
-      script:
-        - sudo cp terraform-provider-opentelekomcloud /examples
-        - terraform init ./examples
-        - terraform plan ./examples
-        - terraform apply -auto-approve ./examples
-        - terraform destroy -force ./examples
+    #- stage: testcase1
+    #  script:
+    #    - sudo cp terraform-provider-opentelekomcloud /examples
+    #    - terraform init ./examples
+    #    - terraform plan ./examples
+    #    - terraform apply -auto-approve ./examples
+    #    - terraform destroy -force ./examples
 
     - stage: testcase2
       script:
@@ -75,6 +75,5 @@ branches:
 matrix:
     fast_finish: true
     allow_failures:
-        - go: tip
-          stage: test
+          stage: testcase2
 
