@@ -36,18 +36,18 @@ jobs:
     - stage: testcase1
       script:
         - sudo cp terraform-provider-opentelekomcloud /examples
-        - terraform init
-        - terraform plan
-        - terraform apply -auto-approve
-        - terraform destroy -force
+        - terraform init ./examples
+        - terraform plan ./examples
+        - terraform apply -auto-approve ./examples
+        - terraform destroy -force ./examples
 
     - stage: testcase2
       script:
         - sudo cp terraform-provider-opentelekomcloud /Testcase2
-        - terraform init
-        - terraform plan
-        - terraform apply -auto-approve
-        - terraform destroy -force
+        - terraform init ./Testcase2
+        - terraform plan ./Testcase2
+        - terraform apply -auto-approve ./Testcase2
+        - terraform destroy -force ./Testcase2
 
 # script to execute terraform command to create a resource
 
