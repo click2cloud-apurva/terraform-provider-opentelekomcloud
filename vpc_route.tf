@@ -69,8 +69,10 @@ resource "opentelekomcloud_vpc_route_v2" "route_1_testcase3" {
   vpc_id = "${opentelekomcloud_vpc_v1.vpc_2_testcase3.id}"
 
 }
+/*
 
 provisioner "local-exec" {
   command    = "echo first"
   on_failure = "continue"
 }
+*/
