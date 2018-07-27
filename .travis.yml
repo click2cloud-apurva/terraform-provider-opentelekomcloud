@@ -33,7 +33,7 @@ before_script:
 script:
 
 - terraform init
-- terraform plan
+- terraform plan ./examples
 #- terraform apply -auto-approve
 #- terraform destroy -force
 #allow_failure: true
