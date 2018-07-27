@@ -26,7 +26,7 @@ install:
 
 before_script:
 # creates executable file
-- cd /examples
+- cd ./examples
 - go build
 
 
