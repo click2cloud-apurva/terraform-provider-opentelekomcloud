@@ -36,6 +36,7 @@ script:
 - terraform plan
 - terraform apply -auto-approve
 - terraform destroy -force
+
 allow_failure: always
 
 notifications:
