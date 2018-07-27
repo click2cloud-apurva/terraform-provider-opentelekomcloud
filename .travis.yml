@@ -28,6 +28,17 @@ before_script:
 # creates executable file
 - go build
 
+
+jobs:
+  include:
+    - stage: test
+      script:
+        - terraform init
+        - terraform plan
+        - terraform apply -auto-approve
+        - terraform destroy -force
+
+
 # script to execute terraform command to create a resource
 
 #allow_failure: always
@@ -52,10 +63,8 @@ branches:
   - master
 
 matrix:
-  allow_failures:
-    script:
-      - terraform init
-      - terraform plan
-      - terraform apply -auto-approve
-      - terraform destroy -force
+    fast_finish: true
+    allow_failures:
+        - go: tip
+          stage: test
 
