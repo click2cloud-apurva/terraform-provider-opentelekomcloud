@@ -27,12 +27,12 @@ install:
 before_script:
 # creates executable file
 - go build
-- sudo mv *.exe ./examples
-
 
 
 # script to execute terraform command to create a resource
 script:
+
+- sudo mv terraform-provider-opentelekomcloud.exe /examples
 - terraform init
 #- terraform plan
 #- terraform apply -auto-approve
