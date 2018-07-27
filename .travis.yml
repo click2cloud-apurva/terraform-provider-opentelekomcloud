@@ -28,18 +28,26 @@ before_script:
 # creates executable file
 - go build
 - ls
-- sudo cp terraform-provider-opentelekomcloud /examples
+
 
 
 jobs:
   include:
-    - stage: test
+    - stage: testcase1
       script:
+        - sudo cp terraform-provider-opentelekomcloud /examples
         - terraform init
         - terraform plan
         - terraform apply -auto-approve
         - terraform destroy -force
 
+    - stage: testcase2
+      script:
+        - sudo cp terraform-provider-opentelekomcloud /Testcase2
+        - terraform init
+        - terraform plan
+        - terraform apply -auto-approve
+        - terraform destroy -force
 
 # script to execute terraform command to create a resource
 

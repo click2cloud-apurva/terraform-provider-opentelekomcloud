@@ -1,4 +1,5 @@
 
+/*
 ##TestCase1:  Positive scenario to verify resources are created successfully.
 
 resource "opentelekomcloud_vpc_v1" "vpc_1_testcase1" {
@@ -21,6 +22,7 @@ resource "opentelekomcloud_vpc_route_v2" "route_1_positivetestcase" {
   vpc_id = "${opentelekomcloud_vpc_v1.vpc_1_testcase1.id}"
 
 }
+*/
 
 
 ##TestCase2:  Negative scenario to verify resource getting created with invalid name parameter in opentelekomcloud_vpc_v1 resource.
@@ -48,6 +50,7 @@ resource "opentelekomcloud_vpc_route_v2" "route_1_testcase2" {
 
 
 
+/*
 ##TestCase3:  Negative scenario to verify resource getting created with invalid name parameter in opentelekomcloud_vpc_v1 resource.
 resource "opentelekomcloud_vpc_v1" "vpc_1_testcase3" {
   name = "vpc 1_testcase3"
@@ -69,6 +72,7 @@ resource "opentelekomcloud_vpc_route_v2" "route_1_testcase3" {
   vpc_id = "${opentelekomcloud_vpc_v1.vpc_2_testcase3.id}"
 
 }
+*/
 /*
 
 provisioner "local-exec" {
