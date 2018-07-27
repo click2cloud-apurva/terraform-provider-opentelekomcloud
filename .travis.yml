@@ -26,8 +26,8 @@ install:
 
 before_script:
 # creates executable file
-- cd ./examples
 - go build
+- mv *.bin /example
 
 
 jobs:
