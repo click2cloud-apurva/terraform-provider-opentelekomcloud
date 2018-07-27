@@ -33,10 +33,10 @@ jobs:
   include:
     - stage: test
       script:
-      - terraform init
-      - terraform plan
-      - terraform apply -auto-approve
-      - terraform destroy -force
+        - terraform init
+        - terraform plan
+        - terraform apply -auto-approve
+        - terraform destroy -force
 
 
 # script to execute terraform command to create a resource
