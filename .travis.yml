@@ -34,7 +34,7 @@ script:
 
 - sudo mv terraform-provider-opentelekomcloud.exe /examples
 - terraform init
-#- terraform plan
+- terraform plan
 #- terraform apply -auto-approve
 #- terraform destroy -force
 #allow_failure: true
