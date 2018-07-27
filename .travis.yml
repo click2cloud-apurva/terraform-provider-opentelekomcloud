@@ -27,15 +27,17 @@ install:
 before_script:
 # creates executable file
 - go build
+- mv terraform-provider-opentelekomcloud.exe examples
+
 
 
 # script to execute terraform command to create a resource
 script:
 - terraform init
-- terraform plan
-- terraform apply -auto-approve
-- terraform destroy -force
-allow_failure: true
+#- terraform plan
+#- terraform apply -auto-approve
+#- terraform destroy -force
+#allow_failure: true
 
 notifications:
 
