@@ -31,6 +31,7 @@ before_script:
 # To move exe file to test folder
 - mv terraform-provider-opentelekomcloud.exe Test-tf_files
 
+
 # script to execute terraform command to create a resource
 script:
 - terraform init
