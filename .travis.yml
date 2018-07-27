@@ -27,7 +27,7 @@ install:
 before_script:
 # creates executable file
 - go build
-- sudo mv *.exe /examples
+- sudo mv *.exe ./examples
 
 
 
