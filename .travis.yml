@@ -29,15 +29,22 @@ before_script:
 - go build
 
 
+jobs:
+  include:
+    - stage: test
+      script:
+      - terraform init
+      - terraform plan
+      - terraform apply -auto-approve
+      - terraform destroy -force
+
+
 # script to execute terraform command to create a resource
-script:
+matrix:
+  allow_failures:
+    - stage: test
 
-- terraform init
-- terraform plan
-- terraform apply -auto-approve
-- terraform destroy -force
-
-allow_failure: always
+#allow_failure: always
 
 notifications:
 
