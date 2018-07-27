@@ -27,7 +27,6 @@ install:
 before_script:
 # creates executable file
 - go build
-- mv *.sh /example
 
 
 jobs:
@@ -41,9 +40,6 @@ jobs:
 
 
 # script to execute terraform command to create a resource
-matrix:
-  allow_failures:
-    - stage: test
 
 #allow_failure: always
 
@@ -57,13 +53,6 @@ notifications:
   ##  - sapan.vaswani@click2cloud.net
     on_success: always
     on_failure: always
-    template:
-          - "Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository_slug}@%{branch} by %{author} %{result} in %{duration}"
-    format: html
-
- ## template:
-   ##   - "%{repository_slug} (%{commit}) : %{message} %{foo} "
-   ##   - "Build details: %{build_url}"
 
 
 
@@ -72,7 +61,10 @@ notifications:
 branches:
   only:
   - master
+
 matrix:
   fast_finish: true
   allow_failures:
   - go: tip
+  - stage: test
+
