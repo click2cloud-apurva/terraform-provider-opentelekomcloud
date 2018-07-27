@@ -28,7 +28,7 @@ before_script:
 # creates executable file
 - go build
 - ls
-- cp terraform-provider-opentelekomcloud /examples
+- sudo cp terraform-provider-opentelekomcloud /examples
 
 
 jobs:
