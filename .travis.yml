@@ -70,6 +70,12 @@ branches:
   only:
   - master
 
+
+cache:
+  directories:
+    - ./usr/local/bin/
+
+
 matrix:
 # the build won’t be marked as finished until they have completed, use fast_finish to mark them as finish
     fast_finish: true
