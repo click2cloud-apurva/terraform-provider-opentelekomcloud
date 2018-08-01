@@ -3,7 +3,7 @@
 dist: trusty
 
 # If you need a more customizable environment running in a virtual machine :ubuntu environment
-sudo: enabled
+sudo: required
 
 services:
  - docker
@@ -27,45 +27,43 @@ install:
 before_script:
 # creates executable file
 - go build
-- ls
 
 
 
 jobs:
   include:
-    #- stage: testcase1
-    #  script:
-    #    - sudo cp terraform-provider-opentelekomcloud /examples
-    #    - terraform init ./examples
-    #    - terraform plan ./examples
-    #    - terraform apply -auto-approve ./examples
-    #    - terraform destroy -force ./examples
+  #stage 1 to execute positive test case
+    - stage: Testcase1
+      script:
+     #cp to copy build code to folder containing config file
+        - sudo cp terraform-provider-opentelekomcloud /Positive_TestCases
+        - terraform init ./Positive_TestCases
+        - terraform apply -auto-approve ./Positive_TestCases
+        - terraform destroy -force ./Positive_TestCases
+
+
+  # stage 2 to execute negative test case
 
     - stage: testcase2
       script:
-        - sudo cp terraform-provider-opentelekomcloud /Testcase2
-        - terraform init ./Testcase2
-        - terraform plan ./Testcase2
-        - terraform apply -auto-approve ./Testcase2
-        - terraform destroy -force ./Testcase2
+     #cp to copy build code to folder containing config file
+        - sudo cp terraform-provider-opentelekomcloud /Negative_TestCases
+        - terraform init ./Negative_TestCases
+        - terraform apply -auto-approve ./Negative_TestCases
+        - terraform destroy -force ./Negative_TestCases
 
 # script to execute terraform command to create a resource
-
-#allow_failure: always
 
 notifications:
 
   email:
     recipients:
       - rohini.burde@click2cloud.net
-  ##    - apurva.dhoble@click2cloud.net
+  ##  - apurva.dhoble@click2cloud.net
   ##  - disha.wani@click2cloud.net
   ##  - sapan.vaswani@click2cloud.net
     on_success: always
     on_failure: always
-
-
-
 
 
 branches:
@@ -73,7 +71,8 @@ branches:
   - master
 
 matrix:
+# the build won’t be marked as finished until they have completed, use fast_finish to mark them as finish
     fast_finish: true
     allow_failures:
-          stage: testcase2
+    - stage: testcase2
 
