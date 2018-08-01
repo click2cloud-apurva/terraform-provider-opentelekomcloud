@@ -2,7 +2,7 @@
 ##TestCase1:  To veify resources are created with all the mandetory parameters.
 
 resource "opentelekomcloud_vpc_v1" "vpc_1_testcase2" {
-  //name = "vpc_1_testcase2"
+  name = "vpc_1_testcase2"
   cidr = "192.168.0.0/16"
 }
 resource "opentelekomcloud_vpc_v1" "vpc_2_testcase2" {
