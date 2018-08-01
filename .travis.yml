@@ -33,7 +33,7 @@ before_script:
 jobs:
   include:
   #stage 1 to execute positive test case
-    - stage: Testcase1
+    - stage: Positive_TestCases
       script:
      #cp to copy build code to folder containing config file
         - sudo cp terraform-provider-opentelekomcloud /Positive_TestCases
@@ -44,7 +44,7 @@ jobs:
 
   # stage 2 to execute negative test case
 
-    - stage: testcase2
+    - stage: Negative_TestCases
       script:
      #cp to copy build code to folder containing config file
         - sudo cp terraform-provider-opentelekomcloud /Negative_TestCases
@@ -74,5 +74,4 @@ matrix:
 # the build won’t be marked as finished until they have completed, use fast_finish to mark them as finish
     fast_finish: true
     allow_failures:
-    - stage: testcase2
-
+    - stage: Negative_TestCases
