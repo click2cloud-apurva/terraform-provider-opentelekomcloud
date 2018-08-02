@@ -3,6 +3,7 @@ Terraform OpenTelekomCloud                 Provider
 
 - Website: https://www.terraform.io
 - [![Gitter chat](https://badges.gitter.im/hashicorp-terraform/Lobby.png)](https://gitter.im/hashicorp-terraform/Lobby)
+- [![Build Status](https://travis-ci.org/RohiniBurde/terraform-provider-opentelekomcloud.svg?branch=master)](https://travis-ci.org/RohiniBurde/terraform-provider-opentelekomcloud)
 - Mailing list: [Google Groups](http://groups.google.com/group/terraform-tool)
 
 <img src="https://cdn.rawgit.com/hashicorp/terraform-website/master/content/source/assets/images/logo-hashicorp.svg" width="600px">

@@ -35,24 +35,13 @@ jobs:
   #stage 1 to execute positive test case
     - stage: Positive_TestCases
       script:
-     #cp to copy build code to folder containing config file
-        - sudo cp terraform-provider-opentelekomcloud /Positive_TestCases
-        - terraform init ./Positive_TestCases
-        - terraform apply -auto-approve ./Positive_TestCases
-        - terraform destroy -force ./Positive_TestCases
-
+        - bash scripts/Negative_TestCases.sh
 
   # stage 2 to execute negative test case
 
-    - stage: Negative_TestCases
-      script:
-     #cp to copy build code to folder containing config file
-        - sudo cp terraform-provider-opentelekomcloud /Negative_TestCases
-        - terraform init ./Negative_TestCases
-        - terraform apply -auto-approve ./Negative_TestCases
-        - terraform destroy -force ./Negative_TestCases
-
-# script to execute terraform command to create a resource
+  #  - stage: Negative_TestCases
+   #   script:
+    #    - bash scripts/Negative_TestCases.sh
 
 notifications:
 
@@ -70,7 +59,7 @@ branches:
   only:
   - master
 
-
+#to cache terraform installation directories
 cache:
   directories:
     - ./usr/local/bin/
