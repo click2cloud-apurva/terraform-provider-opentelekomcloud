@@ -4,14 +4,14 @@
 
 echo "==> Terraform initialization in process..."
 
-sudo cp terraform-provider-opentelekomcloud /Positive_TestCases
+sudo cp terraform-provider-opentelekomcloud /positive_testscripts
 
-terraform init ./Positive_TestCases
+terraform init ./positive_testscripts
 
 echo "==> Preparing for terraform apply..."
 
-terraform apply -auto-approve ./Positive_TestCases
+terraform apply -auto-approve ./positive_testscripts
 
 echo "==> Resource destroy in process..."
 
-terraform destroy -force ./Positive_TestCases
+terraform destroy -force ./positive_testscripts

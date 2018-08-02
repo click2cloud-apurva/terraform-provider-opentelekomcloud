@@ -16,12 +16,7 @@ go:
 - 1.8.1
 
 install:
-# This script is used by the Travis build to install terraform packages
-- sudo apt-get install -y zip unzip
-- wget https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip
-- unzip terraform_0.11.7_linux_amd64.zip
-- sudo mv terraform /usr/local/bin/
-- terraform --version
+- bash scripts/install_dependencies.sh
 
 
 before_script:
@@ -33,15 +28,15 @@ before_script:
 jobs:
   include:
   #stage 1 to execute positive test case
-    - stage: Positive_TestCases
+    - stage: positive_testscripts
       script:
-        - bash scripts/Negative_TestCases.sh
+        - bash scripts/positive_testcases.sh
 
   # stage 2 to execute negative test case
 
-    - stage: Negative_TestCases
+    - stage: negative_testscripts
       script:
-        - bash scripts/Negative_TestCases.sh
+        - bash scripts/negative_testcases.sh
 
 notifications:
 
@@ -69,4 +64,4 @@ matrix:
 # the build won’t be marked as finished until they have completed, use fast_finish to mark them as finish
     fast_finish: true
     allow_failures:
-    - stage: Negative_TestCases
+    - stage: negative_testscripts
