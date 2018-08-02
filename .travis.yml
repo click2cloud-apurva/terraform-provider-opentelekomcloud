@@ -39,9 +39,9 @@ jobs:
 
   # stage 2 to execute negative test case
 
-  #  - stage: Negative_TestCases
-   #   script:
-    #    - bash scripts/Negative_TestCases.sh
+    - stage: Negative_TestCases
+      script:
+        - bash scripts/Negative_TestCases.sh
 
 notifications:
 
