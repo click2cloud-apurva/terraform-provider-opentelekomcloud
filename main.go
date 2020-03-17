@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/RohiniBurde/terraform-provider-opentelekomcloud/opentelekomcloud"
+	"github.com/click2cloud-apurva/terraform-provider-opentelekomcloud/opentelekomcloud"
 	"github.com/hashicorp/terraform/plugin"
 )
 
