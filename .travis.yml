@@ -41,11 +41,9 @@ jobs:
 notifications:
 
   email:
-    recipients:
-      - rohini.burde@click2cloud.net
-  ##  - apurva.dhoble@click2cloud.net
-  ##  - disha.wani@click2cloud.net
-  ##  - sapan.vaswani@click2cloud.net
+    recipients:      
+      - apurva.dhoble@click2cloud.net
+  
     on_success: always
     on_failure: always
 
